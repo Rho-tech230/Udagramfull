@@ -21,10 +21,10 @@ script:
   - docker build -t udagram-frontend ./udagram-frontend
   
   #Tagging
-  - docker tag udagram-reverseproxy Rho-tech230/udagram-reverseproxy:v4a
-  - docker tag udagram-api-feed Rho-tech230/udagram-api-feed:v4a
-  - docker tag udagram-api-user Rho-tech230/udagram-api-user:v4a
-  - docker tag udagram-frontend Rho-tech230/udagram-frontend:local
+  - docker tag udagram-reverseproxy rhotech02/udagram-reverseproxy:v4a
+  - docker tag udagram-api-feed rhotech02/udagram-api-feed:v4a
+  - docker tag udagram-api-user rhotech02/udagram-api-user:v4a
+  - docker tag udagram-frontend rhotech02/udagram-frontend:local
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push Rho-tech230/udagram-reverseproxy:v4a
