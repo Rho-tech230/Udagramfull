@@ -21,13 +21,13 @@ script:
   - docker build -t udagram-frontend ./udagram-frontend
   
   #Tagging
-  - docker tag udagram-reverseproxy rho-tech230/udagram-reverseproxy:v1
-  - docker tag udagram-api-feed rho-tech230/udagram-api-feed:v1
-  - docker tag udagram-api-user rho-tech230/udagram-api-user:v1
-  - docker tag udagram-frontend rho-tech230/udagram-frontend:local
+  - docker tag udagram-reverseproxy rho-tech230/udagram-reverseproxy-two:v1
+  - docker tag udagram-api-feed rho-tech230/udagram-api-feed-two:v1
+  - docker tag udagram-api-user rho-tech230/udagram-api-user-two:v1
+  - docker tag udagram-frontend rho-tech230/udagram-frontend-two:local
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD" docker.io
-  - docker push rho-tech230/udagram-reverseproxy:v1
-  - docker push rho-tech230/udagram-api-feed:v1
-  - docker push rho-tech230/udagram-api-user:v1
-  - docker push rho-tech230/udagram-frontend:local
+  - docker push rho-tech230/udagram-reverseproxy-two:v1
+  - docker push rho-tech230/udagram-api-feed-two:v1
+  - docker push rho-tech230/udagram-api-user-two:v1
+  - docker push rho-tech230/udagram-frontend-two:local
